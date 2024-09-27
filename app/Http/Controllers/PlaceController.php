@@ -6,10 +6,10 @@ use Illuminate\Http\Request;
 
 class PlaceController extends Controller
 {
-    public function getPlaces($city)
+    public function getPlaces($city, $limit = 50, $offset = 0)
     {        
         $apiKey = 'fsq3CO+2T6oh2hk2g87oQhWpyhKEJrv9gSWMfxRjyb7XQ84='; 
-        $url = "https://api.foursquare.com/v3/places/search?near=" . urlencode($city) . "&limit=15";
+        $url = "https://api.foursquare.com/v3/places/search?near=" . urlencode($city) . "&limit=" . $limit . "&offset=" . $offset;
 
         $ch = curl_init($url);
 
