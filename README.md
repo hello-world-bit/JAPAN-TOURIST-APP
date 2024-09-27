@@ -68,9 +68,5 @@ Follow these steps to set up and run the **Japan Tourist Information App** on yo
 
 8. **Open the application in your browser**
 
-<<<<<<< HEAD
-    http://localhost:8000
-=======
     ```bash
     http://localhost:8000
->>>>>>> development
