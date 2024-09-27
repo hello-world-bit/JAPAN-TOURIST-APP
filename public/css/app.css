@@ -5,9 +5,11 @@
     align-items: center;
     justify-content: center;
     padding: 20px;
-    background-color: #f8f9fa;
+    background: linear-gradient(to bottom, #ffebee, #81d4fa); /* Cherry Blossom Pink to Sky Blue */
     min-height: 100vh;
 }
+
+
 
 .title {
     font-size: 2.5em;
@@ -50,12 +52,37 @@
     margin-top: 10px;
 }
 
+.category-icon {
+    background-color: black; 
+    border-radius: 50%; 
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    padding: 10px; 
+    width: 64px;
+    height: 64px; 
+    margin: 0 auto; 
+}
+
+.category-icon img {
+    width: 100%; 
+    height: auto; 
+}
+
+.place-item {
+    text-align: center; 
+    margin-top: 10px; 
+}
+
+
+
 .weather-info, .places-info {
     margin-top: 20px;
     padding: 15px;
-    border: 1px solid #dee2e6;
+    border: 1px solid #000000;
     border-radius: 5px;
-    background-color: #fff;
+    background-color: transparent;
+    color: black; 
     width: 100%;
     max-width: 400px;
 }
@@ -69,3 +96,47 @@
     margin: 5px 0;
     font-size: 1.2em;
 }
+
+.slideshow-container {
+    position: relative;
+    max-width: 100%;
+    margin: auto;
+    text-align: center; 
+}
+
+.place-image {
+    width: 100%;
+    border-radius: 5px;
+}
+
+.mySlides {
+    display: none;
+}
+
+.text {
+    color: black;
+    font-weight: bold;
+    position: absolute;
+    bottom: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 20px;
+    background-color: rgba(0, 0, 0, 0.5); 
+    padding: 5px;
+}
+
+ul {
+    list-style: none;
+    padding: 10px;
+}
+
+  .address-link {
+    color: black; 
+    text-decoration: none; 
+    cursor: pointer; 
+}
+
+.address-link:hover {
+    text-decoration: underline; 
+}
+

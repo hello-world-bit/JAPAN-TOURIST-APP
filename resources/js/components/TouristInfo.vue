@@ -34,8 +34,7 @@
             </p>
             <p>
                 <i class="fas fa-cloud-sun"></i>
-                Weather: {{ new Date(weather.list[0].dt * 1000).toLocaleDateString('en-US', { weekday: 'long' }) }} 
-                - {{ weather.list[0].weather[0].description }}
+                Weather: {{ weather.list[0].weather[0].description }}
             </p>
             <p>
                 <i class="fas fa-calendar-alt"></i>
@@ -43,12 +42,33 @@
             </p>
         </div>
 
+
         <div v-if="places" class="places-info">
-            <h2 class="sub-title">Places To Visit in {{ city }}</h2>
+            <h2 class="sub-title" style="text-align: center">Places To Visit in {{ city }}</h2>
             <ul>
-                <li v-for="place in places.results" :key="place.id" class="place-item">{{ place.name }}</li>
+                <li v-for="place in places.results" :key="place.fsq_id" class="place-item">
+                    <div class="category-icon">
+                        <img :src="place.categories[0].icon.prefix + '64' + place.categories[0].icon.suffix" alt="Category Icon" />
+                    </div>
+                    <div>
+                        <strong>{{ place.name }}</strong> (<span>{{place.categories[0].short_name}})</span>
+                    </div>
+                    <div>
+                        <p>Location : 
+                            <a 
+                                :href="'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(place.location.formatted_address)" 
+                                target="_blank" 
+                                class="address-link"
+                            >
+                                {{ place.location.formatted_address }}
+                            </a>
+                        </p>
+                    </div>
+
+                </li>
             </ul>
         </div>
+
     </div>
 </template>
 
