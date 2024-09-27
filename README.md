@@ -22,7 +22,7 @@ The UI and UX focus on **responsiveness**, **clarity**, and **user-friendliness*
 ## Code Implementation
 
 1. **Modular Structure**: The application follows the **Model-View-Controller (MVC)** pattern using Laravel’s backend structure and Vue.js for the front-end. This allows for better separation of concerns and maintainability.
-2. **Efficient Asset Management**: **Laravel Mix** is used to compile assets like SASS and Vue components, ensuring optimized builds for production.
+2. **Efficient Asset Management**: **Laravel Mix** is used to compile assets like Vue components, ensuring optimized builds for production.
 3. **Vue 3 Integration**: Vue 3's **composition API** and improved reactivity system provide a scalable way to manage state and UI interactions.
 4. **Reusable Components**: Each component (Vue) is reusable and self-contained, reducing redundancy in the code and making it easier to manage.
 5. **Routing and API Calls**: Vue.js interacts seamlessly with the Laravel backend via REST APIs, ensuring real-time data fetching with tools like Axios for smooth UX.
@@ -48,6 +48,7 @@ Follow these steps to set up and run the **Japan Tourist Information App** on yo
 
 4. **npm install**
 
+    ```bash
     npm install
 5. **Set up your environment variables**
 
@@ -56,13 +57,16 @@ Follow these steps to set up and run the **Japan Tourist Information App** on yo
 
 6. **Generate the application key**
 
+    ```bash
     php artisan key:generate
 
 7. **Run the development server**
 
+    ```bash
     php artisan serve
     npm run dev
 
 8. **Open the application in your browser**
 
+    ```bash
     http://localhost:8000
