@@ -14,4 +14,3 @@
     <script src="{{ mix('js/app.js') }}"></script>
 </body>
 </html>
-{{-- <h1>hi</h1> --}}
