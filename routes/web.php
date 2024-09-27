@@ -22,4 +22,6 @@ Route::get('/', function () {
 Route::get('/weather/{city}', [WeatherController::class, 'getWeather']);
 Route::get('/places/{city}', [PlaceController::class, 'getPlaces']);
 
+//sample
+
 
