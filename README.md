@@ -1,11 +1,6 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-# Project Overview
-=======
 # Japan Tourist Information App
 
 ## Project Overview
->>>>>>> development
 
 This project integrates **Laravel** and **Vue.js** for a seamless full-stack application, using **CSS** for styling. The overall structure is designed for simplicity, maintainability, and scalability.
 
@@ -34,11 +29,6 @@ The UI and UX focus on **responsiveness**, **clarity**, and **user-friendliness*
 
 ## Installation
 
-<<<<<<< HEAD
-=======
-# JAPAN-TOURIST-APP
->>>>>>> 4e12b0144a4d4f23ebfe4b1886289a157b18d94e
-=======
 Follow these steps to set up and run the **Japan Tourist Information App** on your local machine.
 
 1. **Clone the repository**:
@@ -76,4 +66,3 @@ Follow these steps to set up and run the **Japan Tourist Information App** on yo
 8. **Open the application in your browser**
 
     http://localhost:8000
->>>>>>> development
