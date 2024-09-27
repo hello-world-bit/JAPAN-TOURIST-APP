@@ -5,11 +5,9 @@
     align-items: center;
     justify-content: center;
     padding: 20px;
-    background: linear-gradient(to bottom, #ffebee, #81d4fa); /* Cherry Blossom Pink to Sky Blue */
+    background: linear-gradient(to bottom, #ffebee, #81d4fa);
     min-height: 100vh;
 }
-
-
 
 .title {
     font-size: 2.5em;
