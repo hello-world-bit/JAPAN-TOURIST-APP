@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Project Overview
 
 This project integrates **Laravel** and **Vue.js** for a seamless full-stack application, using **CSS** for styling. The overall structure is designed for simplicity, maintainability, and scalability.
@@ -27,3 +28,6 @@ The UI and UX focus on **responsiveness**, **clarity**, and **user-friendliness*
 
 ## Installation
 
+=======
+# JAPAN-TOURIST-APP
+>>>>>>> 4e12b0144a4d4f23ebfe4b1886289a157b18d94e
