@@ -55,8 +55,7 @@
                     </div>
                     <div>
                         <p>Location: 
-                            <a 
-                                :href="'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(place.location.formatted_address)" 
+                            <a                                 :href="'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(place.location.formatted_address)" 
                                 target="_blank" 
                                 class="address-link"
                             >
