@@ -1,47 +1,47 @@
 <template>
     <div class="container">
-        <h1 class="title">Travel Information for Japan</h1>
-        <input 
-            v-model="city" 
-            class="city-input" 
-            placeholder="Enter City" 
-            @keyup.enter="fetchData" 
-        />
-        <button class="fetch-button" @click="fetchData">Get Info</button>
+        <div class="search-box">
+            <i class="fas fa-location-dot"></i>
+            <input 
+                v-model="city" 
+                class="city-input" 
+                placeholder="Enter City" 
+                @keyup.enter="fetchData" 
+            />
+            <button class="fetch-button" @click="fetchData">
+                <i class="search-icon fas fa-magnifying-glass"></i>
+            </button>
+        </div>
 
         <div v-if="loading" class="loading">Loading...</div>
 
         <div v-if="error" class="error">{{ error }}</div>
 
-        <div v-if="weather" class="weather-info">
-            <h2 class="sub-title">Weather in {{ city }}</h2>
-            <p>
-                <i class="fas fa-thermometer-half"></i>
-                Temperature: {{ convertToCelsius(weather.list[0].main.temp) }}°C 
+        <div v-if="weather" class="weather-box">
+            <img :src="getWeatherIcon(weather.list[0].weather[0].icon)" alt="Weather Icon" />
+            <p class="temperature">
+                {{ convertToCelsius(weather.list[0].main.temp) }}°C 
                 ({{ convertToFahrenheit(weather.list[0].main.temp) }}°F)
             </p>
-            <p>
-                <i class="fas fa-umbrella"></i>
-                Precipitation: {{ (weather.list[0].pop * 100).toFixed(0) }}%
-            </p>
-            <p>
-                <i class="fas fa-tint"></i>
-                Humidity: {{ weather.list[0].main.humidity }}%
-            </p>
-            <p>
-                <i class="fas fa-wind"></i>
-                Wind: {{ weather.list[0].wind.speed }} km/h
-            </p>
-            <p>
-                <i class="fas fa-cloud-sun"></i>
-                Weather: {{ weather.list[0].weather[0].description }}
-            </p>
-            <p>
-                <i class="fas fa-calendar-alt"></i>
-                Date & Time: {{ formatDate(weather.list[0].dt * 1000) }}
-            </p>
+            <p class="description">{{ weather.list[0].weather[0].description }}</p>
         </div>
 
+        <div v-if="weather" class="weather-details">
+            <div class="humidity">
+                <i class="fas fa-water"></i>
+                <div class="text">
+                    <span>{{ weather.list[0].main.humidity }}%</span>
+                    <p>Humidity</p>
+                </div>
+            </div>
+            <div class="wind">
+                <i class="fas fa-wind"></i>
+                <div class="text">
+                    <span>{{ weather.list[0].wind.speed }} km/h</span>
+                    <p>Wind Speed</p>
+                </div>
+            </div>
+        </div>
 
         <div v-if="places" class="places-info">
             <h2 class="sub-title" style="text-align: center">Places To Visit in {{ city }}</h2>
@@ -51,10 +51,10 @@
                         <img :src="place.categories[0].icon.prefix + '64' + place.categories[0].icon.suffix" alt="Category Icon" />
                     </div>
                     <div>
-                        <strong>{{ place.name }}</strong> (<span>{{place.categories[0].short_name}})</span>
+                        <strong>{{ place.name }}</strong> (<span>{{ place.categories[0].short_name }}</span>)
                     </div>
                     <div>
-                        <p>Location : 
+                        <p>Location: 
                             <a 
                                 :href="'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(place.location.formatted_address)" 
                                 target="_blank" 
@@ -64,11 +64,9 @@
                             </a>
                         </p>
                     </div>
-
                 </li>
             </ul>
         </div>
-
     </div>
 </template>
 
@@ -135,6 +133,10 @@ export default {
                 timeZone: 'Asia/Tokyo', 
             });
         },
+        getWeatherIcon(iconCode) {
+            return `http://openweathermap.org/img/wn/${iconCode}@2x.png`;
+        },
     },
 };
 </script>
+

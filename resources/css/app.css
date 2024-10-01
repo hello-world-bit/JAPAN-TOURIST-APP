@@ -1,54 +1,177 @@
-.container {
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: none;
+    box-sizing: border-box;
+}
+
+body {
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 20px;
-    background: linear-gradient(to bottom, #ffebee, #81d4fa);
+    background: #06283D;
     min-height: 100vh;
 }
 
-.title {
-    font-size: 2.5em;
-    margin-bottom: 20px;
+.container {
+    position: relative;
+    width: 400px;
+    background: #fff;
+    padding: 28px 32px;
+    overflow: hidden;
+    border-radius: 18px;
+    font-family: 'Roboto', sans-serif;
+    transition: 0.6s ease-out;
 }
 
-.city-input {
-    padding: 10px;
-    font-size: 1.2em;
-    border: 1px solid #ced4da;
-    border-radius: 5px;
-    margin-bottom: 10px;
-    width: 300px;
-    text-align: center;
+.search-box {
+    width: 100%;
+    height: min-content;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
-.fetch-button {
-    padding: 10px 20px;
-    font-size: 1.2em;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 5px;
+.search-box input {
+    color: #06283D;
+    width: 80%;
+    font-size: 24px;
+    font-weight: 500;
+    text-transform: uppercase;
+    padding-left: 32px;
+}
+
+.search-box input::placeholder{
+    font-size: 20px;
+    font-weight: 500;
+    color: #06283D;
+    text-transform: capitalize;
+}
+
+.search-box button {
     cursor: pointer;
-    transition: background-color 0.3s;
+    width: 50px;
+    height: 50px;
+    color: #06283D;
+    background: #dff6ff;
+    border-radius: 50%;
+    font-size: 22px;
+    transition: 0.4s ease;
 }
 
-.fetch-button:hover {
-    background-color: #0056b3;
+.search-box button:hover {
+    color: #fff;
+    background: #4796c7;
 }
 
-.loading {
-    font-size: 1.2em;
-    color: #6c757d;
+.search-box i{
+    position: absolute;
+    color: #06283D;
+    font-size: 28px;
 }
 
-.error {
-    color: red;
-    font-weight: bold;
-    margin-top: 10px;
+
+.search-box .search-icon{
+    position: relative;
+    color: #06283D;
+    font-size: 28px;
 }
 
+.weather-box {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.weather-box img{
+    width: 60%;
+    margin-top: 30px;
+}
+
+.weather-box .temperature{
+    position: relative;
+    color: #06283D;
+    font-size: 3rem;
+    font-weight: 800;
+    margin-top: 0px;
+}
+
+.weather-box .temperature span{
+    position: absolute;
+    margin-left: 4px;
+    font-size: 1.5rem;
+}
+
+.weather-box .description{
+    color: #06283D;
+    font-size: 22px;
+    font-weight: 500;
+    text-transform: capitalize;
+}
+
+.weather-details{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+.weather-details .humidity, .weather-details .wind{
+    display: flex;
+    align-items: center;
+    width: 50%;
+    height: 100px;
+}
+
+.weather-details .humidity{
+    padding-left: 20px;
+    justify-content: flex-start;
+}
+
+.weather-details .wind{
+    padding-right: 20px;
+    justify-content: flex-end;
+}
+
+.weather-details i{
+    color: #06283D;
+    font-size: 26px;
+    margin-right: 10px;
+    margin-top: 6px;
+}
+
+.weather-details span{
+    color: #06283D;
+    font-size: 22px;
+    font-weight: 500;
+}
+
+.weather-details p{
+    color: #06283D;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+ul {
+    list-style: none;
+    padding: 10px;
+}
+
+  .address-link {
+    color: black; 
+    text-decoration: none; 
+    cursor: pointer; 
+}
+
+
+.places-info {
+    margin-top: 20px;
+    width: 100%;
+    max-width: 400px;
+}
+.address-link:hover {
+    text-decoration: underline; 
+}
 .category-icon {
     background-color: black; 
     border-radius: 50%; 
@@ -68,71 +191,5 @@
 
 .place-item {
     text-align: center; 
-    margin-top: 10px; 
-}
-
-
-
-.weather-info, .places-info {
-    margin-top: 20px;
-    padding: 15px;
-    border: 1px solid #000000;
-    border-radius: 5px;
-    background-color: transparent;
-    color: black; 
-    width: 100%;
-    max-width: 400px;
-}
-
-.sub-title {
-    font-size: 1.5em;
-    margin-bottom: 10px;
-}
-
-.place-item {
-    margin: 5px 0;
-    font-size: 1.2em;
-}
-
-.slideshow-container {
-    position: relative;
-    max-width: 100%;
-    margin: auto;
-    text-align: center; 
-}
-
-.place-image {
-    width: 100%;
-    border-radius: 5px;
-}
-
-.mySlides {
-    display: none;
-}
-
-.text {
-    color: black;
-    font-weight: bold;
-    position: absolute;
-    bottom: 8px;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 20px;
-    background-color: rgba(0, 0, 0, 0.5); 
-    padding: 5px;
-}
-
-ul {
-    list-style: none;
-    padding: 10px;
-}
-
-  .address-link {
-    color: black; 
-    text-decoration: none; 
-    cursor: pointer; 
-}
-
-.address-link:hover {
-    text-decoration: underline; 
+    margin-top: 50px; 
 }
