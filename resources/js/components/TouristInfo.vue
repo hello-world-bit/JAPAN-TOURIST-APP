@@ -134,7 +134,7 @@ export default {
             });
         },
         getWeatherIcon(iconCode) {
-            return `http://openweathermap.org/img/wn/${iconCode}@2x.png`; // Update based on your API
+            return `http://openweathermap.org/img/wn/${iconCode}@2x.png`;
         },
     },
 };
