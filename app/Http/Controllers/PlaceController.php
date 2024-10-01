@@ -22,11 +22,6 @@ class PlaceController extends Controller
         }
 
         $places = $response->json();
-<<<<<<< HEAD
-
-        // dd($places);
-=======
->>>>>>> development
 
         return response()->json($places);
     }
